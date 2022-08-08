@@ -4,15 +4,20 @@ import glacialExpedition.models.explorers.Explorer;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ExplorerRepository implements Repository<Explorer>{
 
     private Map<String, Explorer> explorers;
 
+    public ExplorerRepository(){
+        this.explorers = new LinkedHashMap<>();
+    }
+
     @Override
     public Collection<Explorer> getCollection() {
-        return Collections.unmodifiableCollection(explorers);
+        return Collections.unmodifiableCollection(explorers.values());
     }
 
     @Override
@@ -28,5 +33,12 @@ public class ExplorerRepository implements Repository<Explorer>{
     @Override
     public Explorer byName(String name) {
         return explorers.get(name);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        explorers.values().forEach(explorer -> sb.append(explorer).append(System.lineSeparator()));
+        return sb.toString();
     }
 }

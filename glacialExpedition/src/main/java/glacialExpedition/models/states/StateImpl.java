@@ -24,11 +24,11 @@ public class StateImpl implements State{
 
     @Override
     public Collection<String> getExhibits() {
-        return null;
+        return exhibits;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }

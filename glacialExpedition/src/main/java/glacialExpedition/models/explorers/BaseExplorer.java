@@ -3,6 +3,7 @@ package glacialExpedition.models.explorers;
 import glacialExpedition.models.suitcases.Carton;
 import glacialExpedition.models.suitcases.Suitcase;
 
+import static glacialExpedition.common.ConstantMessages.*;
 import static glacialExpedition.common.ExceptionMessages.*;
 
 public abstract class BaseExplorer implements Explorer{
@@ -36,12 +37,12 @@ public abstract class BaseExplorer implements Explorer{
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public double getEnergy() {
-        return 0;
+        return energy;
     }
 
     @Override
@@ -51,7 +52,7 @@ public abstract class BaseExplorer implements Explorer{
 
     @Override
     public Suitcase getSuitcase() {
-        return null;
+        return suitcase;
     }
 
     @Override
@@ -62,5 +63,21 @@ public abstract class BaseExplorer implements Explorer{
 //        }
 
         energy = Math.max(0, energy - BASE_SEARCH_ENERGY);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format(FINAL_EXPLORER_NAME, getName()));
+        sb.append(System.lineSeparator());
+        sb.append(String.format(FINAL_EXPLORER_ENERGY, getEnergy()));
+        sb.append(System.lineSeparator());
+        if(getSuitcase().getExhibits().isEmpty()) {
+            sb.append(String.format(FINAL_EXPLORER_SUITCASE_EXHIBITS, "None"));
+        } else {
+            sb.append(String.format(FINAL_EXPLORER_SUITCASE_EXHIBITS,
+                    String.join(FINAL_EXPLORER_SUITCASE_EXHIBITS_DELIMITER, getSuitcase().getExhibits())));
+        }
+        return sb.toString();
     }
 }
