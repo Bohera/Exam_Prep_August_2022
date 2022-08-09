@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static christmasRaces.common.ExceptionMessages.DRIVER_EXISTS;
+
 public class DriverRepository implements Repository<Driver> {
 
     private Map<String, Driver> drivers = new LinkedHashMap<>();

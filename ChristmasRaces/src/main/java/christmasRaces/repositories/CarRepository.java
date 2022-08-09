@@ -5,6 +5,8 @@ import christmasRaces.repositories.interfaces.Repository;
 
 import java.util.*;
 
+import static christmasRaces.common.ExceptionMessages.CAR_EXISTS;
+
 public class CarRepository implements Repository<Car> {
 
     private Map<String, Car> models = new LinkedHashMap<>();

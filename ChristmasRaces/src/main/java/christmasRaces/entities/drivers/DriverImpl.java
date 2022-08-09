@@ -52,7 +52,7 @@ public class DriverImpl implements Driver {
 
     @Override
     public void winRace() {
-        //TODO
+        this.numberOfWins += 1;
     }
 
     @Override

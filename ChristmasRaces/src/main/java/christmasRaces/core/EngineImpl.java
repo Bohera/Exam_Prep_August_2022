@@ -75,32 +75,26 @@ public class EngineImpl implements Engine {
     }
 
     private String createRace(String[] data) {
-        // TODO
-        return null;
+        return controller.createRace(data[0], Integer.parseInt(data[1]));
     }
 
     private String addDriver(String[] data) {
-        // TODO
-        return null;
+        return controller.addDriverToRace(data[0], data[1]);
     }
 
     private String startRace(String[] data) {
-        // TODO
-        return null;
+        return controller.startRace(data[0]);
     }
 
     private String addCar(String[] data) {
-        // TODO
-        return null;
+        return controller.addCarToDriver(data[0], data[1]);
     }
 
     private String createCar(String[] data) {
-        // TODO
-        return null;
+        return controller.createCar(data[0], data[1], Integer.parseInt(data[2]));
     }
 
     private String createDriver(String[] data) {
-        // TODO
-        return null;
+         return controller.createDriver(data[0]);
     }
 }

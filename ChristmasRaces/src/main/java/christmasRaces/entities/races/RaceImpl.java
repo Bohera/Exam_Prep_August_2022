@@ -54,7 +54,7 @@ public class RaceImpl implements Race{
             throw new IllegalArgumentException(DRIVER_INVALID);
         }
 
-        if(!driver.getCanParticipate()) {
+        if(driver.getCar() == null) {
             throw new IllegalArgumentException(String.format(DRIVER_NOT_PARTICIPATE, driver.getName()));
         }
 
