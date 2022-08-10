@@ -31,6 +31,7 @@ public class RaceImpl implements Race{
         if (laps < 1) {
             throw new IllegalArgumentException(String.format(INVALID_NUMBER_OF_LAPS, 1));
         }
+        this.laps = laps;
     }
 
     @Override

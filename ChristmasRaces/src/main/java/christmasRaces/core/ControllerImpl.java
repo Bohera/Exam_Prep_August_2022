@@ -1,7 +1,6 @@
 package christmasRaces.core;
 
 import christmasRaces.core.interfaces.Controller;
-import christmasRaces.entities.cars.BaseCar;
 import christmasRaces.entities.cars.Car;
 import christmasRaces.entities.cars.MuscleCar;
 import christmasRaces.entities.cars.SportsCar;
@@ -11,8 +10,6 @@ import christmasRaces.entities.races.Race;
 import christmasRaces.entities.races.RaceImpl;
 import christmasRaces.repositories.interfaces.Repository;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
