@@ -78,12 +78,12 @@ public class ControllerImpl implements Controller{
         boolean isSuitableHouse = false;
 
         if(catType.equals("ShorthairCat")) {
-            if(houseName.equals("ShortHouse")) {
+            if(getHouse(houseName).getClass().getSimpleName().equals("ShortHouse")) {
                 isSuitableHouse = true;
             }
             cat = new ShorthairCat(catName, catBreed, price);
         } else if(catType.equals("LonghairCat")) {
-            if(houseName.equals("LongHouse")) {
+            if(getHouse(houseName).getClass().getSimpleName().equals("LongHouse")) {
                 isSuitableHouse = true;
             }
             cat = new LonghairCat(catName, catBreed, price);

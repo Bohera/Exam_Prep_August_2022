@@ -3,6 +3,7 @@ package catHouse.entities.houses;
 import catHouse.entities.cat.Cat;
 import catHouse.entities.toys.Toy;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -19,11 +20,13 @@ public abstract class BaseHouse implements House{
     public BaseHouse(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
+        toys = new ArrayList<>();
+        cats = new ArrayList<>();
     }
 
     @Override
     public int sumSoftness() {
-        long count = toys.stream().map(Toy::getSoftness).count();
+        long count = toys.stream().mapToLong(Toy::getSoftness).sum();
         return (int)count;
     }
 
